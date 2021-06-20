@@ -12,10 +12,24 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
   </head>
   <body>
-    <button class="search-button">Search</button>
-    <div class= "search-form" id="search-form"></div>
-    <ul class="gallery" id="gallery"></ul>
-    <div id="sentinel"></div>
+    <section class="search">
+      <div class="container">
+        <button class="search-button">
+          <span class="search-button__text">Click for search</span>
+          <span class="material-icons search-button__icons">search</span>
+        </button>
+        <div class="search-form" id="search-form"></div>
+      </div>
+    </section>
+    <section class="gallery">
+      <div class="container">
+        <ul class="gallery__list list" id="gallery"></ul>        
+        <button type="button" class="button load-more is-hidden" data-action="load-more">
+          <span class="label">Load more</span>
+        </button>
+        <div class="my-element-selector"></div>
+      </div>
+    </section>
     <script src="./index.js"></script>
   </body>
 </html>
