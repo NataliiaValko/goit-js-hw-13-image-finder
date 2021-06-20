@@ -34,15 +34,18 @@ const actionButtonLoadMore = {
     }
 }
 
-const makeLoadMore = () => {
+const makeLoadMore = async () => {
     actionButtonLoadMore.loadTextContent();
     actionButtonLoadMore.disable();
-    newApiService.fetchGallery()
-        .then(array => makeMarkupGallery(array))
-    setTimeout(() => {
-        actionButtonLoadMore.checkForResponses();
-        actionButtonLoadMore.onScroll()
-    }, 500);
+    const array = await newApiService.fetchGallery()
+    const render =await makeMarkupGallery(array)
+    const scroll = render => {
+            setTimeout(() => {
+                actionButtonLoadMore.checkForResponses();
+                actionButtonLoadMore.onScroll()
+            }, 500)
+    }
+    await scroll(render)
 }
 
 refs.btnLoadMore.addEventListener('click', makeLoadMore);
