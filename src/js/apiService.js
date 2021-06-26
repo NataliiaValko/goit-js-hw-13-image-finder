@@ -13,7 +13,8 @@ export default class NewApiService {
     }
 
     getURLRequest() {
-        return `${this.BASE_URL}?image_type=${this.image_type}&orientation=${this.orientation}&q=${this.valueForSearch}&page=${this.numberPage}&per_page=${this.per_page}&key=${this.keyPixabay}`;
+        return `${this.BASE_URL}?image_type=${this.image_type}&orientation=${this.orientation}\
+&q=${this.valueForSearch}&page=${this.numberPage}&per_page=${this.per_page}&key=${this.keyPixabay}`;
     }
     
     async fetchGallery() {
