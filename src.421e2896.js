@@ -38,4 +38,4 @@ var t=arguments[3],e="Expected a function",n=NaN,r="[object Symbol]",i=/^\s+|\s+
 },{"./refs":"VyiV","../templates/searchFormTpl.hbs":"I5Ir","./apiService":"eQwa","./gallery":"chxP","./btnMoreLoad":"X3eo","lodash.debounce":"PZFh"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/refs"),require("./js/apiService"),require("./js/gallery"),require("./js/searchForm"),require("./js/modal"),require("./js/pnotify"),require("./js/btnMoreLoad");
 },{"./sass/main.scss":"clu1","./js/refs":"VyiV","./js/apiService":"eQwa","./js/gallery":"chxP","./js/searchForm":"eKL4","./js/modal":"RSqK","./js/pnotify":"fRfm","./js/btnMoreLoad":"X3eo"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-13-image-finder/src.af8eae6d.js.map
+//# sourceMappingURL=/goit-js-hw-13-image-finder/src.421e2896.js.map
