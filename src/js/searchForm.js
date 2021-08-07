@@ -4,8 +4,6 @@ import NewApiService from './apiService';
 import { clearGallery, makeMarkupGallery } from './gallery';
 import actionButtonLoadMore from './btnMoreLoad';
 
-const debounce = require('lodash.debounce');
-
 const newApiService = new NewApiService();
 
 const actionSearchForm = {
@@ -16,18 +14,17 @@ const actionSearchForm = {
     },
 
     addEventListenerSearchForm() {
-        const searchInputRef = document.querySelector('.search-field__input');
-        searchInputRef.addEventListener('input', debounce(actionSearchForm.getValueForSearch, 1000))
+        refs.searchForm.addEventListener('submit', actionSearchForm.getValueForSearch)
     },
-    
+
     createSearchForm() {
         refs.searchForm.innerHTML = markupSearchForm();
     },
-    
+
     hiddenSearchForm() {
         refs.searchButton.classList.add('is-hidden');
     },
-    
+
     makeActiveSearchForm() {
         actionSearchForm.createSearchForm();
         actionSearchForm.addEventListenerSearchForm();
@@ -37,7 +34,8 @@ const actionSearchForm = {
     },
 
     getValueForSearch(e) {
-        const value = e.target.value.trim();
+        e.preventDefault();
+        const value = e.target.elements.query.value.trim();
         if (!value) {
             return clearGallery();
         }
@@ -56,6 +54,7 @@ const actionSearchForm = {
             actionButtonLoadMore.onScroll();
         }, 500)
     },
+    
 }
 
 refs.searchButton.addEventListener('click', actionSearchForm.makeActiveSearchForm)
